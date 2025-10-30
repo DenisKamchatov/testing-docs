@@ -11,8 +11,6 @@ export const useDocumentsStore = defineStore('documents', () => {
   const loading = ref(false);
   const error = ref<string | null>(null);
 
-  const hasImage = computed(() => !!selected.value?.image?.trim());
-
   const searchDocuments = async (query: string) => {
     loading.value = true;
     error.value = null;
@@ -37,6 +35,7 @@ export const useDocumentsStore = defineStore('documents', () => {
 
   const downloadDocument = () => {
     if (!selected.value) return;
+
     const blob = new Blob([selected.value.description], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -51,7 +50,6 @@ export const useDocumentsStore = defineStore('documents', () => {
     selected,
     loading,
     error,
-    hasImage,
     searchDocuments,
     selectDocument,
     removeDocument,

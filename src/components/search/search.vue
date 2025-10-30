@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { ISearchInput } from './typings';
 
-withDefaults(defineProps<ISearchInput>(), {
+withDefaults(defineProps<{
+  placeholder?: string;
+  clearable?: boolean;
+}>(), {
   placeholder: "",
   clearable: false
 });
 
-const emits = defineEmits(["clear"]);
+const emits = defineEmits<{
+  clear: [];
+}>();
 
 const uniqueId = Math.floor(Math.random() * 99999) + 1;
 const inputId = computed<string>(() => `search-${uniqueId}`);

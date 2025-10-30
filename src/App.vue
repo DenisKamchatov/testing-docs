@@ -11,7 +11,15 @@ import Header from './components/header/header.vue';
 </template>
 
 <style scoped lang="scss">
-#app {
-  padding: 40px 50px 58px 50px;
+@include mobile {
+  #app {
+    padding: 20px 25px 29px 25px;
+  }
+}
+
+@include tablet {
+  #app {
+    padding: 40px 50px 58px 50px;
+  }
 }
 </style>

@@ -66,10 +66,11 @@ watch(searchValue, (newVal) => {
 </template>
 
 <style scoped lang="scss">
+@include mobile {
   .sidebar {
     padding: 27px 20px;
 
-    border-right: 1px solid #E0E0E0
+    border-bottom: 1px solid #E0E0E0
   }
 
   .sidebar__title {
@@ -89,4 +90,14 @@ watch(searchValue, (newVal) => {
   .sidebar__list {
     margin: 18px 0 0 0;
   }
+}
+
+@include tablet {
+  .sidebar {
+    padding: 27px 20px;
+
+    border-right: 1px solid #E0E0E0
+  }
+}
+
 </style>

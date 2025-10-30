@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IDocument } from '@/api/infra/docs/typings';
+import { getImageSrc, handleImageError } from '@/common/utils/formatImage';
 
 const props = withDefaults(defineProps<{
   document: IDocument;
@@ -12,21 +13,9 @@ const emits = defineEmits<{
   select: [value: IDocument | null];
 }>();
 
-const getImageSrc = (imageUrl: string | null | undefined): string => {
-  if (!imageUrl || imageUrl.trim() === '') {
-    return '/placeholder.png';
-  }
-  return imageUrl;
-};
-
 function onSelect() {
   emits('select', !props.isSelected ? props.document : null)
 }
-
-const handleImageError = (e: Event) => {
-  const target = e.target as HTMLImageElement;
-  target.src = './placeholder.png';
-};
 </script>
 
 <template>
@@ -54,6 +43,7 @@ const handleImageError = (e: Event) => {
   .list-item {
     display: flex;
     width: 100%;
+    min-height: 70px;
     overflow: hidden;
 
     box-shadow: 0px 0px 10px 0px #0000001A;

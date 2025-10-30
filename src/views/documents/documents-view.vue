@@ -9,12 +9,9 @@ const documentsStore = useDocumentsStore()
 const { 
   items: documents, 
   selected,
-  hasImage,
   error,
   loading, 
 } = storeToRefs(documentsStore)
-// removeDocument, 
-// downloadDocument
 
 function handleRetry() {
   documentsStore.searchDocuments('');
@@ -39,16 +36,21 @@ onMounted(() => {
       @retry="handleRetry"
     />
 
-    <DocumentPreview />
+    <DocumentPreview 
+      :document="selected"
+      @remove="documentsStore.removeDocument"
+      @download="documentsStore.downloadDocument"
+    />
   </main>
 </template>
 
 <style lang="scss">
+
+@include mobile {
   .documents {
     display: grid;
-    grid-template-columns: 290px 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
-    height: 575;
     margin: 35px 0 0 0;
 
     border-radius: 10px;
@@ -56,4 +58,12 @@ onMounted(() => {
     background-color: #FDFDFD;
     box-shadow: 0px 0px 10px 0px #0000001A;
   }
+}
+
+@include tablet {
+  .documents {
+    grid-template-columns: 290px 1fr;
+  }
+}
+  
 </style>
