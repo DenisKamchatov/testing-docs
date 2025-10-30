@@ -2,13 +2,22 @@
 	padding: 0px;
 	margin: 0px;
 	border: none;
-  font-family: "Montserrat", sans-serif;
+
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	line-height: 1;
+
+	color: #000;
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+body {
+	background-color: #FBFBFB;
 }
 
 a, a:link, a:visited  {

@@ -25,7 +25,7 @@ export const useDocumentsStore = defineStore('documents', () => {
     }
   };
 
-  const selectDocument = (doc: IDocument) => {
+  const selectDocument = (doc: IDocument | null) => {
     selected.value = doc;
   };
 
