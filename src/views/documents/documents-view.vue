@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
+import { onMounted } from 'vue';
+
 import DocumentPreview from './components/preview/document-preview.vue';
 import DocumentSidebar from './components/sidebar/document-sidebar.vue';
+
 import { useDocumentsStore } from '@/stores/documents/documents';
-import { onMounted } from 'vue';
 
 const documentsStore = useDocumentsStore()
 const { 

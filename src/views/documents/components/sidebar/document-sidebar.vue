@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
 import Search from '@/components/search/search.vue';
 import DocumentList from '../list/document-list.vue';
 import DocumentListItem from '../list/document-list-item.vue';
+
 import type { IDocument } from '@/api/infra/docs/typings';
-import { ref, watch } from 'vue';
 
 withDefaults(defineProps<{
   documents: IDocument[],

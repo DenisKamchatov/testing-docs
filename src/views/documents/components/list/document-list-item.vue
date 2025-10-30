@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IDocument } from '@/api/infra/docs/typings';
+
 import { getImageSrc, handleImageError } from '@/common/utils/formatImage';
 
 const props = withDefaults(defineProps<{

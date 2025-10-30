@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { IDocument } from '@/api/infra/docs/typings';
 import Button from '@/components/button/button.vue';
+
+import type { IDocument } from '@/api/infra/docs/typings';
 
 withDefaults(defineProps<{
   documents: IDocument[];

@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import type { IDocument } from '@/api/infra/docs/typings';
-import { getImageSrc, handleImageError as handleError } from '@/common/utils/formatImage';
-import Button from '@/components/button/button.vue';
 import { ref, watch } from 'vue';
+
+import Button from '@/components/button/button.vue';
+
+import type { IDocument } from '@/api/infra/docs/typings';
+
+import { getImageSrc, handleImageError as handleError } from '@/common/utils/formatImage';
 
 const props = withDefaults(defineProps<{
   document: IDocument | null;
