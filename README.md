@@ -1,6 +1,6 @@
 # Testing docs
 
-## Стек
+## Stack
 - Vue 3 (Composition API)
 - Typescript
 - Vite
