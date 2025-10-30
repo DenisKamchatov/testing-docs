@@ -11,11 +11,13 @@ export class ApiError extends Error {
   }
 }
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export async function createApiClient<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const url = `${import.meta.env.VITE_API_BASE_URL}${endpoint}`;
+  const url = `${BASE_URL}${endpoint}`;
 
   try {
     const response = await fetch(url, {
